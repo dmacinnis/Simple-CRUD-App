@@ -10,4 +10,11 @@ update.addEventListener('click', __ => {
             quote: 'I find your lack of faith disturbing'
         })
     })
+        .then(res => {
+            if (res.ok) return res.json()
+        })
+        .then(response =>{
+            console.log(response)
+            window.location.reload(true)
+        })
 })

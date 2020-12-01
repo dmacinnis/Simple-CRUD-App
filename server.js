@@ -55,7 +55,8 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true })
                     upsert: true
                 })
                 .then(result => {
-                    console.log(result)
+                    //console.log(result) //darth vader replacer button log
+                    res.json('Success')
                 })
                 .catch(error => console.error(error))
         })
