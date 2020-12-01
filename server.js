@@ -20,6 +20,8 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true })
         app.set('view engine', 'ejs')//*Needs to be placed before any app.use, app.get or app.post methods
 
         app.use(bodyParser.urlencoded({ extended: true }))
+        app.use(express.static('public'))
+        app.use(bodyParser.json())
 
         app.get('/', (req, res) => {
             db.collection('quotes').find().toArray()
@@ -33,8 +35,27 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true })
         app.post('/quotes', (req, res) => {
             quotescollection.insertOne(req.body)
                 .then(result =>{
-                    console.log(req.body)
+                    //console.log(req.body)
                     res.redirect('/')
+                })
+                .catch(error => console.error(error))
+        })
+
+        app.put('/quotes',(req, res) => {
+            console.log(req.body)
+            quotescollection.findOneAndUpdate(
+                {name: 'Yoda'},
+                {
+                    $set: {
+                        name: req.body.name,
+                        quote: req.body.quote
+                    }
+                },
+                {
+                    upsert: true
+                })
+                .then(result => {
+                    console.log(result)
                 })
                 .catch(error => console.error(error))
         })
