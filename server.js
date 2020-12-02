@@ -2,8 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express()
+const dotenv = require('dotenv');
+dotenv.config();
 
-const connectionString = 'mongodb+srv://vader:luke1997molly02@cluster0.0lvwr.mongodb.net/star-wars-quotes?retryWrites=true&w=majority'
+const connectionString = process.env.connectionURL
 
 
 
@@ -13,8 +15,8 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true })
         const db = client.db('star-wars-quotes')
         const quotescollection = db.collection('quotes')
 
-        app.listen(3000, function(){
-            console.log('listening on 3000')
+        app.listen(process.env.PORT, function(){
+            console.log(`listening on ${process.env.PORT}`)
         })
 
         app.set('view engine', 'ejs')//*Needs to be placed before any app.use, app.get or app.post methods
