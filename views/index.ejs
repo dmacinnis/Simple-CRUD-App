@@ -3,18 +3,71 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="main.css">
         <title>Star Wars Quote App</title>
+
     </head>
 
     <body>
-        <div class="container">
+<!--        <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <h1>May Node and Express be with you.</h1>-->
+<!--            </div>-->
+<!--            <div class="container-fluid">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-sm-4 smallItem">-->
+<!--                        <h2>Add quote</h2>-->
+<!--                        <form action="/quotes" method="POST">-->
+<!--                            <input type="text" placeholder="name" name="name" />-->
+<!--                            <input type="text" placeholder="quote" name="quote" />-->
+<!--                            <button type="submit">Submit</button>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-4 smallItem">-->
+<!--                        <h2>Darth Vader Invades!</h2>-->
+<!--                        <p>-->
+<!--                            Replace the first Yoda quote with a quote spoken by Darth Vader-->
+<!--                        </p>-->
+<!--                        <button id="update-button">Replace Yoda's Quote</button>-->
+<!--                    </div>-->
 
-            <div class="bigItem">
-                <h1>May Node and Express be with you.</h1>
-            </div>
+<!--                    <div class="col-sm-4 smallItem">-->
+<!--                        <h2>Remove Darth Vader!</h2>-->
+<!--                        <p>-->
+<!--                            Delete one of Darth Vader's quotes. Does nothing if there are no more Darth Vader quotes.-->
+<!--                        </p>-->
+<!--                        <button id="delete-forever">Delete Darth Vader's quote</button>-->
+<!--                        <div id="message"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="smallItem">
+<!--            <div class="row">-->
+<!--                <h2> Quotes </h2>-->
+
+<!--                <ul >-->
+<!--                    &lt;!&ndash; Loop through quotes &ndash;&gt;-->
+<!--                    <% for(var i = 0; i < quotes.length; i++) {%>-->
+<!--                        <li class="quote">-->
+<!--                            &lt;!&ndash; Output name from the iterated quote object &ndash;&gt;-->
+<!--                            <span><%= quotes[i].name %></span>:-->
+<!--                            &lt;!&ndash; Output quote from the iterated quote object &ndash;&gt;-->
+<!--                            <span><%= quotes[i].quote %></span>-->
+<!--                        </li>-->
+<!--                    <% } %>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+    <div class="container-fluid">
+        <h1 class="bigItem" style="text-align: center">May Node and Express be with you.</h1>
+        <div class="row">
+
+            <div class="col-sm-4 smallItem">
                 <h2>Add quote</h2>
                 <form action="/quotes" method="POST">
                     <input type="text" placeholder="name" name="name" />
@@ -23,41 +76,40 @@
                 </form>
             </div>
 
-
-            <div class="smallItem">
+            <div class="col-sm-4 smallItem">
                 <h2>Darth Vader Invades!</h2>
                 <p>
                     Replace the first Yoda quote with a quote spoken by Darth Vader
                 </p>
                 <button id="update-button">Replace Yoda's Quote</button>
             </div>
-
-            <div class="smallItem">
+            <div class="col-sm-4 smallItem">
                 <h2>Remove Darth Vader!</h2>
                 <p>
                     Delete one of Darth Vader's quotes. Does nothing if there are no more Darth Vader quotes.
                 </p>
                 <button id="delete-forever">Delete Darth Vader's quote</button>
-            <div id="message"></div>
-            </div>
-
-            <div class="bigItem">
-                <h2> Quotes </h2>
-
-                <ul >
-                    <!-- Loop through quotes -->
-                    <% for(var i = 0; i < quotes.length; i++) {%>
-                        <li class="quote">
-                            <!-- Output name from the iterated quote object -->
-                            <span><%= quotes[i].name %></span>:
-                            <!-- Output quote from the iterated quote object -->
-                            <span><%= quotes[i].quote %></span>
-                        </li>
-                    <% } %>
-                </ul>
+                <div id="message"></div>
             </div>
         </div>
+        <div class="bigItem">
+            <h2> Quotes </h2>
 
-    <script src="/main.js"></script>
+            <ul >
+                <!-- Loop through quotes -->
+                <% for(var i = 0; i < quotes.length; i++) {%>
+                    <li class="quote">
+                        <!-- Output name from the iterated quote object -->
+                        <span><%= quotes[i].name %></span>:
+                        <!-- Output quote from the iterated quote object -->
+                        <span><%= quotes[i].quote %></span>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="/main.js"></script>
     </body>
 </html>

@@ -1,21 +1,22 @@
-.container{
-    /*height: 300px;*/
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+/*.container{*/
+/*    !*height: 300px;*!*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    width: 100%;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*}*/
 
 .smallItem{
     padding: 0.5em;
     border-radius: 0.5em;
+    /*margin:0.5em;*/
     border: 1px solid black;
     background-color: white;
-    float:left;
-    width:30%;
+    /*float:left;*/
+    /*width:33%;*/
     overflow: hidden;
-    flex: auto;
+    /*flex: auto;*/
 
 }
 .bigItem{
@@ -24,7 +25,7 @@
     border: 1px solid black;
     background-color: white;
     margin: 0.5em;
-    width:95%;
+    /*width:95%;*/
     overflow: auto;
 
     flex: 3 1 auto;
